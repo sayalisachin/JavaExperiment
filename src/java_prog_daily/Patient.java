@@ -1,3 +1,9 @@
+/* Make  names of two files. Copy contents of first and second. 
+* First file having book name and author name in file
+ * second file having contents of first file
+ * Add copy finish at the end of program
+ */
+
 package java_prog_daily;
 import java.io.FileReader;
 import java.io.FileWriter;
