@@ -5,7 +5,6 @@ converted. [Assume 1 Dollar =75 INR, 1 Euro =82 INR] */
 
 
 package testing.lab3;
-import java.util.Scanner;
 
 public class currencyconvertor {
     private int rupee;
@@ -25,13 +24,12 @@ public class currencyconvertor {
     public static void main(String[] args) {
         
         int result;
-        Scanner sc=new Scanner(System.in);
+        
+        
+        int amount=Integer.parseInt(args[0]);
 
-        System.out.println("Enter amount in rupees: ");
-        int amount=sc.nextInt();
-
-        System.out.println("Enter conversion: (1. To Dollars)(2. To Euros)");
-        int choice=sc.nextInt();
+        
+        int choice=Integer.parseInt(args[1]);
         switch(choice){
             case 1:
             result=(amount/75);
