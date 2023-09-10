@@ -13,7 +13,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class explicitWaitConditionCheck {
  
            public static void main(String[] args) {
-                    // TODO Auto-generated method stub
+                  
                     System.setProperty("webdriver.chrome.driver", "C:\\webdriver\\chromedriver.exe");
                    ChromeOptions options = new ChromeOptions();
                    options.addArguments("--disable-arguments");
