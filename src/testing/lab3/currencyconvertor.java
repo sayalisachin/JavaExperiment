@@ -11,7 +11,7 @@ public class currencyconvertor {
     private int amount;
     private int result;
 
-    public currencyconvertor(int rupee){
+    public void currencyconvertor(int rupee){
         this.rupee=rupee;
     }
     public int getRupee(){
