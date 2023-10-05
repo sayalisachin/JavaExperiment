@@ -1,38 +1,39 @@
-package testing.lab9;
 import java.util.Scanner;
 
 public class StringAnalysis {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.print("Enter a string: ");
-        String input = scanner.nextLine();
+        // Input a multi-line text
+        System.out.println("Enter a multi-line text (type 'end' on a separate line to finish):");
+        StringBuilder text = new StringBuilder();
+        String line;
 
-        int charCount = input.length();
-        int lineCount = input.split("\n").length;
-        int wordCount = input.split("\\s+").length;
-        int vowelCount = countVowels(input);
+        while (!(line = scanner.nextLine()).equalsIgnoreCase("end")) {
+            text.append(line).append("\n");
+        }
 
-        System.out.println("Number of characters: " + charCount);
-        System.out.println("Number of lines: " + lineCount);
-        System.out.println("Number of words: " + wordCount);
-        System.out.println("Number of vowels: " + vowelCount);
-
+        // Close the scanner
         scanner.close();
-    }
 
-    public static int countVowels(String str) {
-        int count = 0;
-        str = str.toLowerCase();
+        // Count characters, words, lines, and vowels
+        String inputText = text.toString();
 
-        for (int i = 0; i < str.length(); i++) {
-            char ch = str.charAt(i);
-            if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u') {
-                count++;
+        int charCount = inputText.length();
+        int wordCount = inputText.split("\\s+").length;
+        int lineCount = inputText.split("\n").length;
+
+        int vowelCount = 0;
+        for (char c : inputText.toLowerCase().toCharArray()) {
+            if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u') {
+                vowelCount++;
             }
         }
 
-        return count;
+        // Display the results
+        System.out.println("Character count: " + charCount);
+        System.out.println("Word count: " + wordCount);
+        System.out.println("Line count: " + lineCount);
+        System.out.println("Vowel count: " + vowelCount);
     }
 }
-
